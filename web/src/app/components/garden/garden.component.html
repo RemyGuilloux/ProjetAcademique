@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="panel panel-default">
+        <div class="panel-heading">
+            <h1>Jardin associé au profil</h1>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped ">
+                <thead>
+                    <tr>
+                        <th>Localisation</th>
+                        <th>Son nom</th>
+                        <th>taille</th>
+                        <th>Type de jardin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{garden.localisation}}</td>
+                        <td>{{garden.name}}</td>
+                        <td>{{garden.size}}</td>
+                        <td>{{garden.typeOfGarden}}</td>  
+                    </tr>
+                    
+                </tbody>
+                <li><td><button (click)="getAd(garden.address.id)" class="btn btn-info" style ="margin-left: 10px">See address</button></td>
+                <td><button (click)="get()" class="btn btn-info" style ="margin-left: 10px">Retour au Profil</button></td></li>
+                
+            </table>          
+        </div>
+    </div>

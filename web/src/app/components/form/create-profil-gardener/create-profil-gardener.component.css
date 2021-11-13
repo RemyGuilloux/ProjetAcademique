@@ -1,0 +1,28 @@
+
+ form{
+    
+    display:flex !important;
+    justify-content: center !important ;
+    flex-direction: column !important;
+    width: 50% !important;
+    
+}
+h3 {
+    text-align: center;
+}
+.jard{
+    display: flex;
+    justify-content: center;
+}
+.jo{
+    width: fit-content !important;
+    align-self: center;
+ }
+ .ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+

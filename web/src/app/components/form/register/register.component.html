@@ -1,0 +1,101 @@
+<div class="card">
+    <div class="card-body">
+<form id="register-form"
+   
+    [formGroup]="registerForm"
+    novalidate
+    (ngSubmit)="register(registerForm.value)">
+    <div class="assaut">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <mat-label>
+            <span [hidden]='username.valid'>Quel est votre Nom ?</span>
+            <span [hidden]='username.invalid'>Votre Nom est:</span>
+        </mat-label>
+        <input formControlName="username"
+            matInput
+            minlength="3" 
+            maxlength="12"
+            required class="form-control"
+            pattern="^[a-zA-Z0-9]*$">
+        <mat-error *ngFor="let validation of errorMessages.name">
+            <br>
+            <mat-error *ngIf="username.hasError(validation.type) && (username.dirty || username.touched)">{{validation.message}}</mat-error>
+        </mat-error>
+    </div>
+    
+    
+
+     <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        <mat-label>
+            <span [hidden]='email.valid'>Quel est votre email ?</span>
+            <span [hidden]='email.invalid'>Votre Mail est:</span>
+        </mat-label>
+        <input formControlName="email"
+        matInput
+        placeholder="nom@email.com"
+        email 
+        required class="form-control"  >
+        <mat-icon color="primary" *ngIf='email.valid && email.touched' ></mat-icon>
+        <mat-icon color="warn" *ngIf='email.invalid && email.touched'  ></mat-icon>
+          <mat-error *ngFor="let validation of errorMessages.mail">
+            <mat-error *ngIf="email.hasError(validation.type) && (email.dirty || email.touched)">{{validation.message}}</mat-error>
+        </mat-error>
+     </div>
+    
+    <div formGroupName="passwordForm"
+        >
+        <mat-label>Choisir un mot de passe ?</mat-label>
+        <div class="input-group">
+            
+            
+            
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input formControlName="password"
+                    type="password"
+                    matInput 
+                    placeholder=" Quel est votre mot de passe" 
+                    required class="form-control">
+                <mat-icon color="primary" *ngIf='password.valid && password.touched' ></mat-icon>
+                <mat-icon color="warn" *ngIf='password.invalid && password.touched' ></mat-icon>
+                <mat-error *ngFor="let validation of errorMessages.password">
+                    <mat-error *ngIf="password.hasError(validation.type) && (password.dirty || password.touched)">{{validation.message}}</mat-error>
+                </mat-error>
+            </div>
+            <mat-label>Confirmer  votre mot de passe</mat-label>
+            <div class="input-group">
+                
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input formControlName="confirm"
+                type="password"
+                matInput
+                placeholder="confirmez votre mot de passe"
+                [errorStateMatcher]="parentErrorStateMatcher"
+                required class="form-control" >
+                <mat-icon color="primary" *ngIf=" passwordForm.valid && confirm.touched" ></mat-icon>
+                <mat-icon color="warn" *ngIf="passwordForm.invalid && confirm.touched " ></mat-icon>
+               
+                <mat-error *ngFor="let validation of errorMessages.confirm">
+                    <mat-error *ngIf="passwordForm.invalid && confirm.touched ">{{validation.message}}</mat-error>
+                </mat-error>
+                <mat-error *ngIf="passwordForm.hasError('passwordsDoNotMatch')">
+                   Attention le Mot de passe est non identique!
+                  </mat-error>
+        
+
+                </div>
+            </div>
+        </div>
+    <br>
+    <br>
+    <mat-slide-toggle class="is-flex space-evenly"formControlName="agree" color="accent"required >
+        En activant ce bouton <span class='is-accent'>vous consentez la mise en oeuvre de vos données à caractère personelle</span>
+    </mat-slide-toggle>
+    <footer fxLayout="row" fxLayoutAlign="space-evenly center">
+        <button type="submit" mat-raised-button [disabled]="registerForm.invalid" color="--primary" class="glyphicon glyphicon-ok toti" >S'inscrire</button>
+    </footer>
+
+</form>
+</div>
+</div>

@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"> 
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bod">
+    <div class="panel-heading">
+        <h1>Jardins</h1>
+    </div>
+    
+    <div id="tableau"  >
+        <table class="responsive-table-line ">
+                <tr >
+                    <th >Commune</th>
+                    <th >Nom</th>
+                    <th >Taille du jardin(m²)</th>
+                    <th >Type de jardin</th>
+                </tr>
+            
+           
+                <tr  *ngFor="let garden of gardens| async | paginate: { itemsPerPage: 2, currentPage: p }">
+                    <td >{{garden.localisation}}</td>
+                    <td >{{garden.name}}</td>
+                    <td >{{garden.size}}</td>
+                    <td >{{garden.typeOfGarden}}</td>
+                    <br>
+                    
+                    <td><button class="th-lg" *ngIf="currentUser.id === garden.user.id" (click)="updateGarden(garden.id)" class=" btn btn-success active">Mettre à jour</button></td>
+                   <!-- <td><button *ngIf="currentUser.id === garden.user.id" (click)="deleteGarden(garden.id)" class="btn btn-danger">Supprimer le jardin</button></td>--> 
+                    <td><button class="th-lg" (click)="getAd(garden.address.id)" class="btn btn-success active">Voir l'addresse</button></td>
+                    <td><button class="th-lg" (click)="get(garden.profil.id)" class="btn btn-success active" style ="margin-left: 10px">Voir le profil</button></td>
+                </tr>
+             
+            <pagination-controls  (pageChange)="p = $event"></pagination-controls>
+        </table> 
+       
+    </div>
+    <button routerLink="/add" class="btn btn-success active "> <mat-icon>add_circle</mat-icon>Créer votre Jardin</button>
+</div>
+

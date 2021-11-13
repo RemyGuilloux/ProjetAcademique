@@ -1,0 +1,58 @@
+a {
+    color: white;
+}
+:host /deep/ .ngx-pagination .current {
+    background: rgb(121, 197, 22);
+    border-radius: 4px;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+
+.row{
+    float: right;
+}
+
+
+:host .all-title-box{
+    background: url(/assets/3.jpg);
+    width:100% ;
+    Background-position : center;
+    padding: 150px;
+    
+    
+    
+	
+}
+@media (max-width: 500px) {
+    .responsive-table-line td,
+    .responsive-table-line table, 
+    .responsive-table-line thead, 
+    .responsive-table-line tbody, 
+    .responsive-table-line th, 
+    .responsive-table-line td, 
+    .responsive-table-line tr { 
+    display: flex;
+    
+    flex-direction: column;
+    
+    }
+    .responsive-table-line td { 
+    position: relative;
+    border: 0px solid transparent;
+    white-space: normal;
+    text-align:center; 
+    }
+    .responsive-table-line th { 
+        position: relative;
+        border: 0px solid transparent;
+        white-space: normal;
+        text-align:center; 
+        }
+
+    }
+    
+        #tableau{
+            display:grid;
+        }
+    

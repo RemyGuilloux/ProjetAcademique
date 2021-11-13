@@ -1,0 +1,75 @@
+<div>
+    <mat-toolbar >
+ 
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>reorder</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" class="menu">
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span><a routerLink="/welcome" class="btn btn-success active" role="button" routerLinkActive="active">Accueil</a></span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>question_answer</mat-icon>
+            <button  routerLink="/aboutUs" class="btn btn-success active" role="button" routerLinkActive="active" >A propos de nous</button>
+          </button>
+          <button mat-menu-item >
+            <mat-icon>accessibility</mat-icon>
+            <span><a  class="btn btn-success disabled" role="button" routerLinkActive="active">Jardins</a></span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>accessibility</mat-icon>
+            <span><a  class="btn btn-success disabled" role="button" routerLinkActive="active">Jardiniers</a></span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>question_answer</mat-icon>
+            <button type="submit" class="btn btn-success active"><a type="submit" href="mailTo:guillouxrem@gmail.com">Contact</a></button>
+          </button>
+        </mat-menu>
+    <div class="butV">     
+      <a routerLink="/welcome"  class="toti active" role="button" routerLinkActive="active" >Accueil</a>
+      <a  routerLink="/aboutUs" class="toti active" role="button" routerLinkActive="active" >A propos de nous</a>
+      <a   class="isDisabled"  >Jardins</a>
+      <a   class="isDisabled"  >Jardiniers </a>
+      <a class="toti " href="mailTo:guillouxrem@gmail.com">Contact</a>
+    </div>
+  </mat-toolbar>
+  </div>
+
+<div class="all-title-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>A Propos de Nous</h2>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="about-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="post-media" style="visibility: visible; animation-name: fadeIn;">
+                    <img src="assets/spring-slide.jpg" alt="banner" />     
+                </div><!-- end media -->
+            </div>
+            <div class="col-md-6">
+                <div class="message-box right-ab">
+                  <br>
+                  <br>
+                    <h2>Bienvenue à Partageons-un-Jardin</h2>
+                    <p>Site communautaire de partage</p>
+                    <p>Il permet de mettre en lien plusieurs personnes afin d'echanger des services contre des jardins ou potager gratuitement</p>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

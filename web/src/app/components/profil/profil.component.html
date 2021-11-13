@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="panel-heading">
+    <h1>Profil associé au jardin</h1>
+</div>
+<div class="panel-body">
+    <table class="table table-striped ">
+        <thead>
+            <tr>
+               
+                    <th>Localisation </th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Téléphone</th>
+                    <th>Genre</th>
+                    <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                    <td>{{profil.localisation}}</td>
+                    <td>{{profil.name}}</td>
+                    <td>{{profil.lastname}}</td>
+                    <td>{{profil.mail}}</td>
+                    <td>{{profil.phone}}</td>
+                    <td>{{profil.gender}}</td>
+                   
+            </tr>
+           
+        </tbody>
+        
+        <td><button (click)="get()" class="btn btn-info" style ="margin-left: 10px">Retour à la liste de Jardins</button></td>
+        <button class="btn btn-success active"><a type="submit" href="mailTo:{{profil.mail}}">Envoyer un message au proprietaire</a></button>
+    </table>
+   
+</div>
+

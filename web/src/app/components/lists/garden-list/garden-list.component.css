@@ -1,0 +1,71 @@
+.active.btn-primary{
+    background-color: var(--primary)
+}
+
+:host /deep/ .ngx-pagination .current {
+    background: rgb(121, 197, 22);
+    border-radius: 4px;
+    padding-left: 9px;
+    padding-right: 9px;
+}
+img {
+    width: 50%;
+    border:40px;
+    border:solid;
+    border-color: greenyellow;
+}
+
+
+.all-title-box h2{
+	color: #ffffff;
+	padding: 0px;
+	font-size: 40px;
+	font-weight: 600;
+}
+.all-title-box .container{
+	position: relative;
+}
+.all-title-box{
+	background: url(/assets/Carousel3.jpg);
+	position: relative;
+	padding: 200px 0 70px 0px;
+	margin-bottom: 0px;
+}
+h2 {
+    font-size: 22px
+}
+@media (max-width: 500px) {
+    .responsive-table-line td,
+    .responsive-table-line table, 
+    .responsive-table-line thead, 
+    .responsive-table-line tbody, 
+    .responsive-table-line th, 
+    .responsive-table-line td, 
+    .responsive-table-line tr { 
+    display: flex;
+    
+    flex-direction: column;
+   
+    
+    }
+    .responsive-table-line td { 
+    position: relative;
+    border: 0px solid transparent;
+    white-space: normal;
+    text-align:center; 
+    }
+    .responsive-table-line th { 
+        position: relative;
+        border: 0px solid transparent;
+        white-space: normal;
+        text-align:center; 
+        }
+
+    }
+    
+    responsive-table-line{
+        width: 100%;
+    }
+    #tableau{
+        display:grid;
+    }

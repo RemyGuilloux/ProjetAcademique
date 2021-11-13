@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+
+
+:root {
+    --primary: #12e3a2;
+    --secondary: #29b941;
+    --thirdery:#a7cf45
+    
+}
+
+.btn.btn-info {
+    background-color: var(--primary);
+}
+
+.btn.btn-danger {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.btn.btn-success {
+    background-color:var(--thirdery);
+}
+
+
+
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+
+/div .assaut {
+      display: flex !important;
+      justify-content: center !important;
+      width: 50% !important;
+  }
+  .mat-error {
+
+    display: table-cell !important;
+  }
+
+ 

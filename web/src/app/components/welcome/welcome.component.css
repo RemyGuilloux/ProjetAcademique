@@ -1,0 +1,73 @@
+
+h4{
+    text-align: center;
+    color:gray;
+    ;
+}
+
+.title {
+    background-color: #60aa48;
+}
+.isDisabled {
+    color:#a7cf45 !important;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+  }
+
+
+.toti {
+        color:#a7cf45 !important;
+        font-family: "century gothic";
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 10px;
+    
+}
+
+a:hover, a:active {
+color: lightgray
+}
+
+@media screen and (min-width:320px) and (max-width:720px){
+    .butV{
+       display: none !important;
+     }
+ }
+
+     mat-toolbar{
+        display: flex;
+        justify-content: center;
+        
+    }
+    
+    .butV{
+        display: flex;
+        align-items: stretch;
+        justify-content: right;
+    }
+
+    :host /deep/ .logout{
+        display: flex;
+        justify-content: right;
+        
+    }
+
+    mat-toolbar{
+        display: flex;
+        justify-content: center;
+    }
+    a{
+        color: #a7cf45;
+        font-family: "century gothic";
+        font-weight: bold;
+        margin-left: 10px;
+        align-items: center;
+        display: inline-flex;
+    }
+    span, a{
+        color:white;
+    }
+    
+    
+

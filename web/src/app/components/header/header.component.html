@@ -1,0 +1,37 @@
+<mat-toolbar >
+ 
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label=" menu">
+      <mat-icon>reorder</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" class="menu">
+        <button mat-menu-item >
+          <mat-icon>accessibility</mat-icon>
+          <span><a routerLink="/gardens" class="btn btn-success active " role="button" routerLinkActive="active">Jardins</a></span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>accessibility</mat-icon>
+          <span><a routerLink="/gardening" class="btn btn-success active " role="button" routerLinkActive="active">Jardiniers</a></span>
+        </button>
+      <button mat-menu-item>
+          <mat-icon>question_answer</mat-icon>
+          <span ><a href="mailTo:guillouxrem@gmail.com" class="btn btn-success active" routerLinkActive="active">Contact</a></span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span><a routerLink="/homepage" class="btn btn-success active" role="button" routerLinkActive="active">Accueil</a></span>
+        </button>
+      </mat-menu>
+  <div class="butV">     
+    <a routerLink="/homepage" class=" active" role="button" routerLinkActive="active" >Accueil</a>
+    
+    <a  routerLink="/gardens" class=" active" role="button" routerLinkActive="active" >Jardins</a>
+    <a  routerLink="/gardening" class=" active" role="button" routerLinkActive="active" >Jardiniers </a>
+    <!-- <button routerLink="/profils" class="btn btn-success active" role="button" routerLinkActive="active" >Liste des Utilisateurs</button> -->
+    <a  href="mailTo:guillouxrem@gmail.com">Contact</a>
+  </div>
+
+<div class="logout">
+  <a class="logout" routerLink="/welcome" (click)="logout()"  routerLinkActive="active" ><mat-icon>power_settings_new</mat-icon></a>
+</div> 
+
+</mat-toolbar>

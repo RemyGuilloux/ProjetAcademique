@@ -1,0 +1,146 @@
+<app-header></app-header>
+<mat-card>
+    <h1>Quels sont les informations du jardin et du profil associé</h1>
+    <div [hidden]="submitted" style="width: 100%;">
+    
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" class="responsive-table-line" >
+                <div class="form-group-2">
+                    <div class="form-group-1">
+                       <h3> Information du Propriétaire</h3>
+                        <div class="form-group">
+                            <label for="name"> Prénom</label>
+                            <input type="text" class="form-control"  id="fGang" #fGang="ngModel" required minlength="3" pattern="^[a-zA-Z ]*$" [(ngModel)]="profil.name" name="name"  >
+                            
+                        </div>
+                       
+                       
+                        <div class="form-group">
+                            <label for="lastName">Nom</label>
+                            <input type="text" class="form-control" id="lastName" required minlength="5" pattern="^[a-zA-Z ]*$" [(ngModel)]="profil.lastname" name="lastname">
+                        </div>
+    
+                        <div class="form-group">
+                        <label for="mail">Mail</label>
+                        <input type="text" class="form-control" id="mail" required email [(ngModel)]="profil.mail" name="mail" #fName="ngModel">
+                        </div>
+    
+                        <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="text" class="form-control" id="fName" required pattern="^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$"  minlength="10"maxlength="10"[(ngModel)]="profil.phone" name="phone">
+                        
+                        <mat-error *ngFor="let validation of errorMessages.phone"></mat-error>
+                        </div>
+
+                        <div class="form-group">
+                        <label for="gender">Genre</label>
+                        <div>
+                        <input type="text" class="form-control" id="gender" required pattern="^[a-zA-Z ]*$" [(ngModel)]="profil.gender" name="gender">
+                        </div>
+                    
+                            <div>
+                                <div class="custom-control custom-radio">
+                                    <input id="value1" type="radio" class="custom-control-input" value="homme" name="gender" [(ngModel)]="profil.gender">
+                                    <label class="custom-control-label" for="male">Homme</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input id="value2" type="radio" class="custom-control-input" value="femme" name="gender" [(ngModel)]="profil.gender">
+                                    <label class="custom-control-label" for="female">Femme</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="localisation">Commune</label>
+                            <input type="text" class="form-control" id="localisation" required pattern="^[a-zA-Z ]*$" [(ngModel)]="profil.localisation" name="localisation">
+                        </div>
+                    </div>                
+                <div class="form-group-1">
+                    <h3>Informations du Jardin</h3>
+    
+                    <div class="form-group">
+                        <label for="localisation1">Commune</label>
+                        <input type="text" class="form-control" id="localisation1" required pattern="^[a-zA-Z ]*$" [(ngModel)]="garden.localisation" name="localisation">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="name1">Nom du jardin</label>
+                        <input type="text" class="form-control" id="name1" required pattern="^[a-zA-Z ]*$" [(ngModel)]="garden.name" name="name">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="size">Taille</label>
+                        <input type="text" class="form-control" id="fName" #fName="ngModel" required minlength="2" maxlength="4" pattern="^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$" [(ngModel)]="garden.size" name="size" >
+                       
+                        <mat-error *ngFor="let validation of errorMessages.phone"></mat-error>
+                        
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="typeOfGarden">Type de Jardin(potager, jardin, autres)</label>
+                        <input type="text" class="form-control" id="typeOfGarden" required pattern="^[a-zA-Z ]*$" [(ngModel)]="garden.typeOfGarden" name="typeOfGarden">
+                    <div>
+
+                    <div class="custom-control custom-radio">
+                        <input id="value3" type="radio" class="custom-control-input" value="Jardin avec arbres" name="typeOfGarden" [(ngModel)]="garden.typeOfGarden">
+                        <label class="custom-control-label" for="Jardin avec arbres">Jardin avec arbres</label>
+                    </div>
+
+                    <div class="custom-control custom-radio">
+                        <input id="value4" type="radio" class="custom-control-input" value="Jardin sans arbres" name="typeOfGarden" [(ngModel)]="garden.typeOfGarden">
+                        <label class="custom-control-label" for="Jardin sans arbres">Jardin sans arbres</label>
+                    </div>
+
+                    <div class="custom-control custom-radio">
+                        <input id="value5" type="radio" class="custom-control-input" value="Jardin et potager" name="typeOfGarden" [(ngModel)]="garden.typeOfGarden">
+                        <label class="custom-control-label" for="Jardin et potager">Jardin et potager</label>
+                    </div>
+
+                    <div class="custom-control custom-radio">
+                        <input id="value6" type="radio" class="custom-control-input" value="autre" name="typeOfGarden" [(ngModel)]="garden.typeOfGarden">
+                        <label class="custom-control-label" for="autre">autre</label>
+                    </div>
+                    </div>
+                </div>
+            </div>
+                    <div class="form-group-1">
+                    <h3>Informations Addresse du jardin</h3>
+    
+                        <div class="form-group">
+                            <label for="num"> Numéro de la voie</label>
+                            <input type="search"  class="form-control" id="fName" required minlength="1" maxlength="3" pattern="^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$"  required [(ngModel)]="address.num" name="num">
+                            
+                            <mat-error *ngFor="let validation of errorMessages.phone"></mat-error> 
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="name2">libellé de la voie</label>
+                            <input type="text" class="form-control" id="name2" required pattern="^[a-zA-Z ]*$" [(ngModel)]="address.name" name="name">
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="town">Nom de la Commune</label>
+                            <input type="text" class="form-control" id="town" required pattern="^[a-zA-Z ]*$" [(ngModel)]="address.town" name="town">
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="zipcode">Code Postale</label>
+                            <input type="text" class="form-control" id="fName" required minlength="5" maxlength="5" pattern="^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$" [(ngModel)]="address.zipcode" name="zipcode">
+                            
+                            <mat-error *ngFor="let validation of errorMessages.phone"></mat-error>
+                            
+                           
+                        </div>
+                    </div>
+                </div>
+            <button type="submit" [disabled]="!contactForm.valid" class="btn btn-success jo">Envoyer</button>
+        </form>
+    
+    
+    </div>
+    </mat-card>
+    
+    
+    
+        <mat-card>
+            <td><button routerLink="/gardens" class="btn btn-info" style ="margin-left: 10px">Retour aux Jardins</button></td>
+        </mat-card>

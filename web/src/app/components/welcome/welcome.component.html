@@ -1,0 +1,60 @@
+<div class="bod">
+  
+    <mat-toolbar >
+ 
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>reorder</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" class="menu">
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span><a routerLink="/welcome" class="btn btn-success active" role="button" routerLinkActive="active">Accueil</a></span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>question_answer</mat-icon>
+            <button  routerLink="/aboutUs" class="btn btn-success active" role="button" routerLinkActive="active" >A propos de nous</button>
+          </button>
+          <button mat-menu-item >
+            <mat-icon>accessibility</mat-icon>
+            <span><a  class="btn btn-success disabled" role="button" routerLinkActive="active">Jardins</a></span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>accessibility</mat-icon>
+            <span><a  class="btn btn-success disabled" role="button" routerLinkActive="active">Jardiniers</a></span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>question_answer</mat-icon>
+            <button type="submit" class="btn btn-success active"><a type="submit" href="mailTo:guillouxrem@gmail.com">Contact</a></button>
+          </button>
+        </mat-menu>
+    <div class="butV" >     
+      <a  class="toti active" role="button" routerLinkActive="active" >Accueil</a>
+      <a class="toti active" routerLink="/aboutUs"  role="button" routerLinkActive="active" >A propos de nous</a>
+      <a   class="isDisabled "  >Jardins</a>
+      <a   class="isDisabled " routerLinkActive="active" >Jardiniers </a>
+      
+      <a class="toti"  href="mailTo:guillouxrem@gmail.com">Contact</a>
+    </div>
+  
+ 
+  </mat-toolbar>
+</div>
+  <div>
+    <app-banner ></app-banner>
+  </div>
+    <br>
+    <br>
+      <mat-tab-group 
+        mat-stretch-tabs dynamicHeight >
+    
+        <mat-tab label="Créer votre compte">
+            <app-register ></app-register>
+        </mat-tab>
+    
+        <mat-tab  label="Connexion" isActive>
+            <app-login class="spaced"></app-login> 
+        </mat-tab>
+    
+      </mat-tab-group>
+    
+  

@@ -1,0 +1,46 @@
+mat-card {
+	background-color:black;
+	border-style: outset;
+}
+
+.twitter-widget {
+	color: white;
+}
+
+.footer-links {
+	color: white;
+}
+
+a {
+	color:white;
+}
+
+.foot{
+	width: 50%;
+}
+
+.bod{
+	background-color:#333333
+}
+@media screen and (min-width:320px) and (max-width:720px){
+	.butV{
+	   display: none !important;
+	 }
+ }
+ @media screen and (min-width:320px) and (max-width:720px){
+	footer{
+	   display: none !important;
+	 }
+ }
+ @media screen and (min-width:320px) and (max-width:720px){
+	.copyrights{
+	   display: none !important;
+	 }
+ }
+h3{
+	color:white
+}
+p{
+	color:white
+}
+ 

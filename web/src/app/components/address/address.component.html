@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1>Address Du jardin</h1>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th>Libellé de la voie</th>
+                    <th>numero de la rue</th>
+                    <th>Ville</th>
+                    <th>Code Postale</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{address.name}}</td>
+                    <td>{{address.num}}</td>
+                    <td>{{address.town}}</td>
+                    <td>{{address.zipcode}}</td>  
+                </tr>
+            </tbody>
+            <td><button (click)="get()" class="btn btn-info" style ="margin-left: 10px">Retour à la liste de Jardins</button></td>
+        </table>
+    </div>
+</div>

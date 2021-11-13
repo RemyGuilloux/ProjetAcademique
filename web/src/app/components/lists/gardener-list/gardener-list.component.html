@@ -1,0 +1,50 @@
+<app-header></app-header>
+<div class="all-title-box">
+    
+    <div class="container">
+        <div class="row">
+            
+        </div>
+    </div>
+</div>
+<div class="bod">
+        <div class="panel-heading">
+            <h1>Profils</h1>
+        </div>
+        <div id="tableau">
+            
+            <table class="responsive-table-line " >
+                    <tr>
+                        <th  >Commune</th>
+                        <th  >Type de Services</th>
+                        <th  >Votre prénom</th>
+                        <th  >Votre nom</th>
+                        <th  >Mail</th>
+                        
+                        <th  >Genre</th>
+                    </tr>
+                
+                
+                    <tr  *ngFor="let gardener of gardeners | async | paginate: { itemsPerPage: 3, currentPage: p }  ">
+                        <td  >{{gardener.localisation}}</td>
+                        <td  >{{gardener.type}}</td>
+                        <td  >{{gardener.name}}</td>
+                        <td  >{{gardener.lastname}}</td>
+                        <td  >{{gardener.mail}}</td>
+                        
+                        <td  >{{gardener.gender}}</td>
+                        
+                        <button class="btn btn-success active"><a type="submit" href="mailTo:{{gardener.mail}}">Envoyer un message au jardinier</a></button>
+                    </tr>
+                    
+                
+                
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </table>
+            
+           
+        </div>
+        <button (click)="gotoCreateGardener()"class="btn btn-success active" style ="margin-left: 10px">Créer votre Profil </button>
+        <button (click)="getH()" class="btn btn-success active" style ="margin-left: 10px">Retour Accueil</button>
+    </div>
+    

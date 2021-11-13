@@ -1,0 +1,70 @@
+<app-header></app-header>
+<h3>Creér Profil Jardinier</h3>
+<div [hidden]="submitted" class="jard" >
+    <form [formGroup]='gardenerForm' novalidate (ngSubmit)="save(gardenerForm.value)">
+        <div class class="form-group">
+            <label for="name"> Nom</label>
+            <input type="text" formControlName="name"  class="form-control" id="name" matInput maxlength="20" required>
+            <mat-error *ngFor="let validation of errorMessages.name">
+                <mat-error *ngIf="forms.isValid(name, validation)">{{validation.message}}</mat-error>
+            </mat-error>
+        </div>
+
+        <div class="form-group">
+            <label for="lastname">Prénom</label>
+            <input formControlName ="lastname"  class="form-control" id="lastname" matInput maxlength="20" required name="lastname">
+            <mat-error *ngFor="let validation of errorMessages.lastname">
+                <mat-error *ngIf="forms.isValid(lastname, validation)">{{validation.message}}</mat-error>
+            </mat-error>
+        </div>
+
+        <div class="form-group">
+            <label for="mail">Mail</label>
+            <input formControlName="mail" class="form-control " id="mail" required  name="mail">
+            <mat-error *ngFor="let validation of errorMessages.mail">
+                <mat-error *ngIf="forms.isValid(mail, validation)">{{validation.message}}</mat-error>
+            </mat-error>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input formControlName="phone" class="form-control" id="phone" matInput maxlength="10" required  name="phone">
+            <mat-error *ngFor="let validation of errorMessages.phone">
+                <mat-error *ngIf="forms.isValid(phone, validation)">{{validation.message}}</mat-error>
+            </mat-error>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Genre</label>
+            <select formControlName="gender" class="form-control" id="gender"  name="gender">
+                <option value="Femme">FEMME</option>
+                <option value="Homme">HOMME</option>
+              </select>
+              <mat-error *ngFor="let validation of errorMessages.gender">
+                <mat-error *ngIf="forms.isValid(gender, validation)">{{validation.message}}</mat-error>
+            </mat-error>
+        </div>
+
+        <div class="form-group">
+                <label for="localisation">Commune</label>
+                <input formControlName="localisation" type="text" class="form-control" id="localisation" required  name="localisation">
+                <mat-error *ngFor="let validation of errorMessages.localisation">
+                    <mat-error *ngIf="forms.isValid(localisation, validation)">{{validation.message}}</mat-error>
+                </mat-error>
+        </div>
+
+        <div class="form-group">
+                    <label for="type"> Type de Services</label>
+                    <input formControlName="type" type="text" class="form-control" id="type" required  name="type">
+                    <mat-error *ngFor="let validation of errorMessages.type">
+                        <mat-error *ngIf="forms.isValid(localisation, type)">{{validation.message}}</mat-error>
+                    </mat-error>
+        </div>
+
+        <button type="submit" [disabled]="gardenerForm.invalid" class="btn btn-success jo">Envoyer</button>
+    </form>
+</div>
+<div [hidden]="!submitted">
+    <h4>création avec succès!</h4>
+    <!-- <button class="btn btn-success" (click) ="newProfil()">Add</button>-->
+</div>

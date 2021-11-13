@@ -1,0 +1,12 @@
+<h3>Télécharger une image de jardin(.jpg, .jpeg)</h3>
+<div>
+  <input #fileInput type="file" ng2FileSelect [uploader]="uploader"/>
+  <div class="drop-box" ng2FileDrop
+      [ngClass]="{'dragover': isDropOver}"
+      [uploader]="uploader"
+      (fileOver)="fileOverAnother($event)"
+      (click)="fileClicked()">
+    <span class="drag-in-title">Glisser le fichier ici</span>
+    <span class="drag-over-title">Indiquer le dossier</span>
+  </div>
+</div>

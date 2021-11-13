@@ -1,0 +1,70 @@
+img {
+    width: 50%;
+    border:40px;
+    border:solid;
+    border-color: greenyellow;
+}
+#breadcrumbs {
+	background: #a8cf45;
+	padding: 10px 20px;
+    position: absolute;
+    right: 0px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 500;
+    color: #888;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.all-title-box h2{
+	color: #ffffff;
+	padding: 0px;
+	font-size: 40px;
+	font-weight: 600;
+}
+.all-title-box .container{
+	position: relative;
+}
+.all-title-box{
+	background: url(/assets/Carousel3.jpg);
+	position: relative;
+	padding: 200px 0 70px 0px;
+	margin-bottom: 0px;
+}
+h2 {
+    font-size: 22px
+    
+}
+:host /deep/ mat-toolbar{
+    display: flex;
+    justify-content: center;
+    
+}
+@media screen and (min-width:320px) and (max-width:720px){
+    .butV{
+       display: none !important;
+     }
+ }
+ @media screen and (min-width:320px) and (max-width:720px){
+    .all-title-box{
+       display: none !important;
+     }
+ }
+
+ .toti{
+    color:#a7cf45;
+    font-family: "century gothic";
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.isDisabled {
+    color:#a7cf45 !important;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+  }

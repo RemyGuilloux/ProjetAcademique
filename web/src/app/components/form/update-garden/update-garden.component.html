@@ -1,0 +1,50 @@
+<app-header></app-header>
+<h3>Modification des information du jardin</h3>
+
+
+<div [hidden]="submitted" >
+  
+  <form  #updateForm="ngForm" (ngSubmit)="onSubmit()"class="d-flex justify-content-center" >
+    <div class="form-group">
+      <label for="name">Nom du jardin</label>
+      <input type="text" class="form-control" id="name" required pattern="^[a-zA-Z ]*$" [(ngModel)]="garden.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Taille</label>
+      <input type="text" class="form-control" id="size" required minlength="2" maxlength="4" pattern="^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$" [(ngModel)]="garden.size" name="size">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Commune</label>
+      <input type="text" class="form-control" id="localisation" required pattern="^[a-zA-Z ]*$" [(ngModel)]="garden.localisation" name="localisation">
+    </div>
+
+    <div class="form-group">
+      <label for="typeOfGarden">Type de Jardin(potager, jardin, autres)</label>
+      <div>
+      <div class="custom-control custom-radio">
+          <input id="value3" type="radio" class="custom-control-input" value="Jardin avec arbres" name="typeOfGarden" [(ngModel)]="garden.typeOfGarden">
+          <label class="custom-control-label" for="Jardin avec arbres">Jardin avec arbres</label>
+      </div>
+      <div class="custom-control custom-radio">
+          <input id="value4" type="radio" class="custom-control-input" value="Jardin sans arbres" name="typeOfGarden" [(ngModel)]="garden.typeOfGarden">
+          <label class="custom-control-label" for="Jardin sans arbres">Jardin sans arbres</label>
+      </div>
+      <div class="custom-control custom-radio">
+          <input id="value5" type="radio" class="custom-control-input" value="Jardin et potager" name="typeOfGarden" [(ngModel)]="garden.typeOfGarden">
+          <label class="custom-control-label" for="Jardin et potager">Jardin et potager</label>
+      </div>
+      <div class="custom-control custom-radio">
+          <input id="value6" type="radio" class="custom-control-input" value="autre" name="typeOfGarden" [(ngModel)]="garden.typeOfGarden">
+          <label class="custom-control-label" for="autre">autre</label>
+      </div>
+      </div>
+        
+        <input type="text" class="form-control" id="typeOfGarden" required pattern="^[a-zA-Z ]*$" [(ngModel)]="garden.typeOfGarden" name="typeOfGarden">
+      </div>
+
+    <button routerLink="/gardens" type="submit" [disabled]="!updateForm.valid" (click)="onSubmit()" class="btn btn-success">Modifier</button>
+  </form>
+</div>
+
